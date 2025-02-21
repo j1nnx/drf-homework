@@ -17,4 +17,5 @@ urlpatterns = [
     path("lessons/<int:pk>/update/", LessonUpdateApiView.as_view(), name='lessons_update'),
 ]
 
+
 urlpatterns += router.urls
