@@ -27,6 +27,7 @@ class LessonRetrieveAPIView(RetrieveAPIView):
     serializer_class = LessonDetailSerializer
 
 
+
 class LessonUpdateApiView(UpdateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
