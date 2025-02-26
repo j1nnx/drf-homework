@@ -6,7 +6,7 @@ from course.models import Course, Lesson
 class LessonSerializer(ModelSerializer):
     class Meta:
         model = Lesson
-        fields = '__all__'
+        fields = "__all__"
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -30,4 +30,3 @@ class LessonDetailSerializer(ModelSerializer):
     class Meta:
         model = Lesson
         fields = ("title", "description", "get_count_lessons_with_same_course")
-

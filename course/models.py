@@ -54,7 +54,8 @@ class Lesson(models.Model):
         verbose_name="Курс",
         null=True,
         blank=True,
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        related_name="Lessons",
     )
 
     class Meta:
