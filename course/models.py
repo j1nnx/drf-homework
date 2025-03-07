@@ -20,6 +20,7 @@ class Course(models.Model):
         verbose_name="описание курса",
         help_text="Введите описание курса",
     )
+    owner = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Владелец', help_text='Укажите владельца курса')
 
     def __str__(self):
         return self.title
@@ -54,8 +55,11 @@ class Lesson(models.Model):
         verbose_name="Курс",
         null=True,
         blank=True,
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        related_name="Lessons",
     )
+    owner = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Владелец',
+                              help_text='Укажите владельца')
 
     class Meta:
         verbose_name = "Урок"
